@@ -19,16 +19,21 @@ public class LoginPage {
     }
 
     public void setEmailAddress(String emailAddress){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
         WebElement emailTextBox = browser.findElement(By.id("email"));
+        emailTextBox.clear();
         emailTextBox.sendKeys( emailAddress);
     }
 
     public  void setPassword(String password){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("passwd")));
         WebElement passwordTextBox = browser.findElement(By.id("passwd"));
+        passwordTextBox.clear();
         passwordTextBox.sendKeys(password);
     }
 
     public  void clickSignInButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(By.id("SubmitLogin")));
         WebElement signInButton = browser.findElement(By.id("SubmitLogin"));
         signInButton.click();
     }
