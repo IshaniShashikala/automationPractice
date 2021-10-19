@@ -1,3 +1,4 @@
+import Pages.HomePage;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,18 +27,10 @@ public class POMCartTests {
         browser.get("http://automationpractice.com/");
 
         // navigate to login page
-        WebElement signInLink = browser.findElement(By.cssSelector("a.login"));
-        signInLink.click();
+        HomePage homePage = new HomePage(browser);
+        homePage.clickSignInButton();
 
         // log in
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
-//        WebElement emailTextbox = browser.findElement(By.id("email"));
-//        emailTextbox.sendKeys("petejenkins@test.com");
-//        WebElement passwordTextbox = browser.findElement(By.id("passwd"));
-//        passwordTextbox.sendKeys("Password1234");
-//        WebElement signInButton = browser.findElement(By.id("SubmitLogin"));
-//        signInButton.click();
-
         LoginPage loginPage = new LoginPage(browser);
         loginPage.setEmailAddress("ishani@liveroom.xyz");
         loginPage.setPassword("automation@2021");

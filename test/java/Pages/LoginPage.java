@@ -10,7 +10,7 @@ public class LoginPage {
     WebDriver browser;
     WebDriverWait wait;
 
-    public  LoginPage(WebDriver browserDriver){
+    public LoginPage(WebDriver browserDriver){
         browser = browserDriver;
 
         // wait for page to load
